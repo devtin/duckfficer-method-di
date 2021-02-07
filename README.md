@@ -6,7 +6,7 @@
 </p>
 
 <p>
-    a simple dependency injection module
+    loads duckfficer-method entities from a path to provide a pleasure-di container
 </p>
 
 ## Installation
@@ -22,6 +22,7 @@ $ yarn add duckfficer-method-di
 - [builds an object appending all method found in given paths](#builds-an-object-appending-all-method-found-in-given-paths)
 - [validates input](#validates-input)
 - [validates output](#validates-output)
+- [emits events](#emits-events)
 
 
 <a name="builds-an-object-appending-all-method-found-in-given-paths"></a>
@@ -91,6 +92,29 @@ const { originalError } = await t.throwsAsync(() => PayPalGateway.pay(0), {
 t.like(originalError, {
   message: 'Invalid string'
 })
+```
+
+<a name="emits-events"></a>
+
+## emits events
+
+
+```js
+const container = duckfficerMethodDi({
+  Gateway: 'gateways',
+  Service: 'services'
+}, {
+  baseDir: path.join(__dirname, './__tests__/fixtures')
+})
+
+const { PayPalGateway } = container
+
+PayPalGateway.on('Paid', (payload) => {
+  t.log(payload)
+  t.pass()
+})
+
+return PayPalGateway.pay(100)
 ```
 
 
