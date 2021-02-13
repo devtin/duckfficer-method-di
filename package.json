@@ -1,6 +1,6 @@
 {
   "name": "duckfficer-method-di",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "loads duckfficer-method entities from a path to provide a pleasure-di container",
   "author": "Martin Rafael Gonzalez <tin@devtin.io>",
   "keywords": [
