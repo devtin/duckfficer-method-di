@@ -124,7 +124,7 @@
   },
   "dependencies": {
     "deep-list-dir": "^1.4.4",
-    "duckfficer-method": "^1.0.2",
+    "duckfficer-method": "^1.0.3",
     "js-dir-into-json": "^2.7.1",
     "lodash": "^4.17.20",
     "pleasure-di": "^1.1.0"
